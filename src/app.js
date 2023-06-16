@@ -46,8 +46,7 @@ function displayDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
-////Display Weather Conditions
-//
+
 //Search Bar and Current Location
 function searchEngine(event) {
   event.preventDefault();
