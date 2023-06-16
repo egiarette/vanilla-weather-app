@@ -23,10 +23,6 @@ li {
   list-style: none;
 }
 
-small {
-	text-align: center;
-}
-
 ul {
   padding: 10px 0px 0px 0px;
 }
@@ -63,13 +59,20 @@ ul {
   margin-right: 10px;
 }
 
+.repo-link{
+	color: rgba(244,131,105,1.00);
+}
+
+.repo-link:hover{
+	border-bottom: 2px dotted rgba(244,131,105,.5);
+}
 .forecast-icon {
   width: 64px;
   height: 64px;
 }
 
 .forecast-card:hover {
-  background-color: var(--floral-white);
+  background-color: rgba(244,131,105,.20);
 }
 
 .units {
