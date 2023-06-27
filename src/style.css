@@ -3,9 +3,9 @@ a {
   text-decoration: none;
 }
 body {
-  background-color: #C7F2FE;
+  background-color: #c7f2fe;
   font-family: "Poppins", sans-serif;
-  color:#3d4d6d;
+  color: #3d4d6d;
 }
 
 h1 {
@@ -29,8 +29,8 @@ ul {
 }
 
 .content-container {
-	margin: 0 auto;
-	max-width: 800px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .lrg-temp {
@@ -60,12 +60,12 @@ ul {
   margin-right: 10px;
 }
 
-.repo-link{
-	color: rgba(244,131,105,1.00);
+.repo-link {
+  color: rgba(244, 131, 105, 1);
 }
 
-.repo-link:hover{
-	border-bottom: 2px dotted rgba(244,131,105,.5);
+.repo-link:hover {
+  border-bottom: 2px dotted rgba(244, 131, 105, 0.5);
 }
 .forecast-icon {
   width: 64px;
@@ -73,7 +73,7 @@ ul {
 }
 
 .forecast-card:hover {
-  background-color: rgba(244,131,105,.20);
+  background-color: rgba(244, 131, 105, 0.2);
 }
 
 .units {

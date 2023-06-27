@@ -19,91 +19,86 @@
       rel="stylesheet"
     />
     <link href="src/style.css" rel="stylesheet" />
-	<link rel="icon" type="favicon" href="images/weather.svg">
+    <link rel="icon" type="favicon" href="images/weather.svg" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-		<div class="content-container">
-      <div class="weather-app">
-        <!-- City Selection & Search Bar -->
-        <div class="row">
-          <div class="col-7">
-            <form>
-              <div class="city-selector">
-                <input
-                  type="radio"
-                  id="current-location"
-                  name="switch-one"
-                  value="current-city"
-                />
-                <label for="current-location">Current</label>
-                <input
-                  type="radio"
-                  id="miami"
-                  name="switch-one"
-                  value="miami"
-                />
-                <label for="miami">Miami</label>
-                <input
-                  type="radio"
-                  id="london"
-                  name="switch-one"
-                  value="london"
-                />
-                <label for="london">London</label>
-                <input
-                  type="radio"
-                  id="tokyo"
-                  name="switch-one"
-                  value="tokyo"
-                />
-                <label for="tokyo">Tokyo</label>
-              </div>
-            </form>
-          </div>
+      <div class="content-container">
+        <div class="weather-app">
+          <!-- City Selection & Search Bar -->
+          <div class="row">
+            <div class="col-7">
+              <form>
+                <div class="city-selector">
+                  <input
+                    type="radio"
+                    id="current-location"
+                    name="switch-one"
+                    value="current-city"
+                  />
+                  <label for="current-location">Current</label>
+                  <input
+                    type="radio"
+                    id="miami"
+                    name="switch-one"
+                    value="miami"
+                  />
+                  <label for="miami">Miami</label>
+                  <input
+                    type="radio"
+                    id="london"
+                    name="switch-one"
+                    value="london"
+                  />
+                  <label for="london">London</label>
+                  <input
+                    type="radio"
+                    id="tokyo"
+                    name="switch-one"
+                    value="tokyo"
+                  />
+                  <label for="tokyo">Tokyo</label>
+                </div>
+              </form>
+            </div>
 
-          <div class="col-5">
-            <form id="city-form">
-              <input
-                type="search"
-                placeholder="Search for a city..."
-                id="city-input"
-              />
-              <input type="submit" value="Search" />
-            </form>
-          </div>
-        </div>
-        <!-- Current City & Weather -->
-
-        <div class="row mt-5">
-          <div class="col-6">
-            <div class="clearfix">
-              <img
-                class="weather-icon float-start"
-				id = "icon"
-                src="#"
-                alt=""
-              />
-              <div class="float-start">
-                <span class="lrg-temp" id="temp"></span>
-                <span class="units">
-                  <a href="#" id="celsius">˚C</a> |
-                  <a href="#" id="fahrenheit">˚F</a>
-                </span>
-              </div>
+            <div class="col-5">
+              <form id="city-form">
+                <input
+                  type="search"
+                  placeholder="Search for a city..."
+                  id="city-input"
+                />
+                <input type="submit" value="Search" />
+              </form>
             </div>
           </div>
-          <div class="col-6 pt-2">
-            <h1 id="city"></h1>
-            <ul>
-              <li id="day-time"></li>
-              <li id="description"></li>
-            </ul>
+          <!-- Current City & Weather -->
+
+          <div class="row mt-5">
+            <div class="col-6">
+              <div class="clearfix">
+                <img class="weather-icon float-start" id="icon" src="" alt="" />
+                <div class="float-start">
+                  <span class="lrg-temp" id="temperature"></span>
+                  <span class="units">
+                    <a href="#" id="celsius-link" class="active">˚C</a> |
+                    <a href="#" id="fahrenheit-link">˚F</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 pt-2">
+              <h1 id="city"></h1>
+              <ul>
+                <li id="day-time"></li>
+                <li id="description"></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <!-- Forecast Area -->
-<!--
+          <!-- Forecast Area -->
+          <!--
         <div class="row text-center mt-5">
           <div class="col-2 forecast-card">
             Day<br />
@@ -161,11 +156,18 @@
           </div>
         </div>
 -->
-		  
+        </div>
+        <small
+          ><a
+            class="repo-link"
+            href="https://github.com/egiarette/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Emily Giarette</small
+        >
       </div>
-		<small><a class="repo-link" href="https://github.com/egiarette/vanilla-weather-app" target="_blank">Open-source code</a> by Emily Giarette</small>
     </div>
-</div>
     <script src="src/app.js"></script>
   </body>
 </html>
