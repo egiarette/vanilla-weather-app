@@ -110,17 +110,6 @@ function displayWeatherCondition(response) {
     );
 }
 
-//// Conversion
-//function convertFahrenheit(event) {
-//  event.preventDefault();
-//  let temperatureElement = document.querySelector("#temp");
-//  temperatureElement.innerHTML = "";
-//}
-//function convertCelsius(event) {
-//  event.preventDefault();
-//  let temperatureElement = document.querySelector("#temp");
-//  temperatureElement.innerHTML = "";
-//}
 //Get Current Date and Time
 let dateElement = document.querySelector("#day-time");
 let currentTime = new Date();
@@ -144,10 +133,3 @@ londonButton.addEventListener("click", london);
 
 let tokyoButton = document.querySelector("#tokyo");
 tokyoButton.addEventListener("click", tokyo);
-
-//// Conversion
-//let fahrenheit = document.querySelector("#fahrenheit");
-//fahrenheit.addEventListener("click", convertFahrenheit);
-//
-//let celsius = document.querySelector("#celsius");
-//celsius.addEventListener("click", convertCelsius);
