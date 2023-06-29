@@ -110,6 +110,35 @@ function displayWeatherCondition(response) {
     );
 }
 
+//Forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class="row text-center mt-5" id="forecast">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2 forecast-card">
+              ${day}<br />
+              <img
+                class="forecast-icon"
+                src="images/cloudy-grey.svg"
+                alt="Grey Cloudy Icon"
+              />
+              <p><strong>15˚</strong> / 5˚</p>
+            </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
 //Get Current Date and Time
 let dateElement = document.querySelector("#day-time");
 let currentTime = new Date();
