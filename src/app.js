@@ -3,10 +3,14 @@ function displayInitial(response) {
   let temperatureElement = document.querySelector("#temp");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
+  let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
+  windElement.innerHTML = `Windspeed: ${Math.round(
+    response.data.wind.speed
+  )} km/h`;
   iconElement.setAttribute("src", `${response.data.condition.icon_url}`);
   iconElement.setAttribute("alt", response.data.condition.description);
   getForecast(response.data.coordinates);
@@ -100,41 +104,55 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.condition.description;
+  document.querySelector("#wind").innerHTML = `Windspeed: ${Math.round(
+    response.data.wind.speed
+  )} km/h`;
   document
     .querySelector("#icon")
     .setAttribute("src", `${response.data.condition.icon_url}`);
 }
 
 //Forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function getForecast(coordinates) {
   console.log(coordinates);
-
   let apiKey = "f19f9fa0bec78fe139t58o4f75a1682f";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
-  console.log(apiURL);
-  axios.get(apiUrl).then(displayForecast);
+  axios.get(apiURL).then(displayForecast);
 }
 
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   let forecastHTML = `<div class="row text-center mt-5" id="forecast">`;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDays, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-2 forecast-card">
-              ${day}<br />
+              ${formatDay(forecastDays.time)}<br />
               <img
                 class="forecast-icon"
-                src="images/cloudy-grey.svg"
-                alt="Grey Cloudy Icon"
+                src="${forecastDays.condition.icon_url}"
+                alt="${forecastDays.condition.icon}"
               />
-              <p><strong>15˚</strong> / 5˚</p>
+              <p><strong>${Math.round(
+                forecastDays.temperature.maximum
+              )}˚</strong> / ${Math.round(
+          forecastDays.temperature.minimum
+        )}˚</p>
             </div>
           `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;

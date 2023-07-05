@@ -17,6 +17,9 @@ li {
   font-weight: 200;
   line-height: 19.2px;
   list-style: none;
+}
+
+.special {
   text-transform: capitalize;
 }
 
