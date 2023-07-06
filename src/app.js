@@ -157,4 +157,4 @@ londonButton.addEventListener("click", london);
 let tokyoButton = document.querySelector("#tokyo");
 tokyoButton.addEventListener("click", tokyo);
 
-searchCity("New York");
+searchCity("Cullowhee");
